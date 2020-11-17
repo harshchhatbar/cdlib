@@ -253,7 +253,7 @@ def eigenvector(g_original):
     if ig is None:
         raise ModuleNotFoundError("Optional dependency not satisfied: install igraph to use the selected feature.")
 
-    g = convert_graph_formats(g_original, ig.Graph)
+    g = convert_graph_formats(g_original, ig.Graph())
     coms = g.community_leading_eigenvector()
 
     communities = [g.vs[x]['name'] for x in coms]
